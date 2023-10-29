@@ -10,6 +10,7 @@
         <p>Описание товара: {{ i.description }}</p>
         <p>Цена товара: {{ i.price }}</p>
         <p>Кол-во товара: {{ i.amount }}</p>
+        <a href="/add-to-cart/{{ i.id }}">Добавить в корзину</a><br>
     {% endfor %}
 </body>
 </html>

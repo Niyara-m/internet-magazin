@@ -25,3 +25,18 @@ class Products(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+class Cart(models.Model):
+    user_id = models.PositiveIntegerField(verbose_name="ID пользователя")
+    product_id = models.ForeignKey(verbose_name="Продукт", to=Products, on_delete=models.CASCADE)
+    count = models.PositiveSmallIntegerField(verbose_name="Количество товаров для покупки", default=1)
+
+    def __str__(self):
+        return f'{self.product_id} - {self.user_id}'
+
+    class Meta:
+        verbose_name = 'Корзина'
+        verbose_name_plural = 'Корзины'
+
+
+
