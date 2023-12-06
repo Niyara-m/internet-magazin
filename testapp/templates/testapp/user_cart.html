@@ -6,11 +6,28 @@
 </head>
 <body>
   {% for i in cart_list %}
-      <h1>{{ i.product_id.name }}</h1>
-      <p>{{ i.product_id.description }}</p>
-  <a href="/del-item/{{ i.id }}">Удалить товар из корзины</a>
-  <br>
+    <h1>{{ i.product_id.name }}</h1>
+    <p>
+      <i>Описание товара:</i>
+      <span>{{ i.product_id.description }}</span>
+    </p>
+    <p>
+      <i>Выбранное кол-во:</i>
+      <span>{{ i.count }}</span>
+    </p>
+
+    <a href="/del-item/{{ i.id }}">Удалить товар из корзины</a>
+    <br>
+    <br>
   {% endfor %}
+  <br>
+  <br>
+  <br>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">Оформить заказ</button>
+  </form>
+
   <a href="/">Домой</a>
 </body>
 </html>

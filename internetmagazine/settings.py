@@ -125,3 +125,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+BOT_TOKEN = '6568587141:AAEzlUWcYnt-q_0KdyLI4XSaVTQjyWjlcuE'
