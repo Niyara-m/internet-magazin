@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Детал инфо о продукте</title>
+</head>
+<body>
+  Название: {{ product.name }} <br>
+  Описание: {{ product.description }} <br>
+  Категория: {{ product.category.name }} <br>
+  Цена: {{ product.price }} <br>
+  Кол-во: {{ product.amount }} <br>
+  Фото: {{ product.photo }} <br>
+  <hr>
+  <form method="POST" action="/add-to-cart/{{ product.id }}">
+      {% csrf_token %}
+      <input type="number" min="1" max="{{ product.amount }}" name="quantity" placeholder="Выберите количество">
+      <button>Добавить в корзину</button>
+  </form>
+</body>
+</html>
